@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+  /*===== Colores =====*/
+  --first-color: rgb(27,37, 54);
+  --second-color: rgb(19, 25, 38);
+  --emphasis-color: rgb(54, 154, 126);
+  --text-color:rgb(212, 217, 220);
+  --link-color:rgb(33,40,107);
+  /*===== Fuente y tipografia =====*/
+  --body-font: 'Roboto', sans-serif;;
+  --xxl-font-size: 2.7rem;
+  --xl-font-size: 1.72rem;
+  --lg-font-size: 1.2rem;
+  --md-font-size: 0.91rem;
+  --sm-font-size: 0.75rem;
+  --vsm-font-size: 0.55rem;
+}
+/*===== BASE =====*/
+*,
+::before,
+::after {
+  box-sizing: border-box !important;
+}
+html {
+  font-size: 16px;
+}
+body {  
+  background-color: var(--second-color);
+
+  font-family: var(--body-font);
+  font-size: var(--sm-font-size) !important;
+  color: var(--text-color);
+}
+.form-control:focus{
+  background-color: var(--second-color);
+  color: var(--text-color);
+}
+  /* DEFINITION COLORS APP  */
+  .bg-first-color {
+    background-color: var(--first-color);
+  }
+  .bg-second-color {
+    background-color: var(--second-color);
+  }
+  .emphasis-color {
+    color: var(--emphasis-color);
+  }
+  .text-color {
+    color: var(--text-color);
+  }
+  .text-emphasis-color {
+    color: var(--emphasis-color);
+  }
+  .link-color {
+    color: var(--link-color);
+  }
+  .border-first-color {
+    border: .01rem solid;
+    background-color: var(--second-color);
+    border-color: var(--second-color);
+    opacity: .5;
+  }
+  .border-second-color {
+    border: .1rem solid;
+    background-color: var(--second-color);
+    border-color: var(--second-color);
+    opacity: .75;
+  }
+  /* DEFINITION FONT SIZE */
+  .xxl-fs {
+    font-size: var(--xxl-font-size) !important;
+  }
+  .xl-fs {
+    font-size: var(--xl-font-size) !important;
+  }
+  .lg-fs {
+    font-size: var(--lg-font-size) !important;
+  }
+  .md-fs {
+    font-size: var(--md-font-size) !important;
+  }
+  .sm-fs {
+    font-size: var(--sm-font-size) !important;
+  }
+  .vsm-fs {
+    font-size: var(--vsm-font-size) !important;
+  }

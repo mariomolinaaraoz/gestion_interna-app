@@ -1,0 +1,26 @@
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    .azt-1{
+      display: none;
+    } 
+}
+@media only screen and (max-width: 575px) {
+    :root{
+      --normal-font-size: calc(10% + 1vw + 1vh);
+    }
+    .azt{
+      display: none;
+    }  
+}  
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+}
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}
+/* XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+}
