@@ -32,6 +32,7 @@ function Home() {
               className="inputField"
               type="email"
               placeholder="Your email"
+              autoComplete='email'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -41,6 +42,7 @@ function Home() {
               className="inputField"
               type="password"
               placeholder=""
+              autoComplete='current-password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
