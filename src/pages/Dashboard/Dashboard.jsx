@@ -44,10 +44,10 @@ function Dashboard({ session }) {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-2 px-0">
+        <div className="col-sm-1 col-md-1 col-lg-1 col-xl-2 col-xxl-2 my-2 mx-auto px-0">
           <SideBar username={username} url={avatar_url}/>
         </div>
-        <div className="col-10 px-0">
+        <div className="col-sm-1 col-md-1 col-lg-1 col-xl-10 col-xxl-10 my-2 mx-auto px-0">
           <Navbar/>
           <Outlet/>
         </div>
