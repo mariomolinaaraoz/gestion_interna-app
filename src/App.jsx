@@ -1,10 +1,10 @@
-import "./index.css";
 import { useState, useEffect } from 'react';
-import { supabase } from './supabase/client';
-import {Home, Dashboard, NotFound} from './pages';
-
 import { Routes, Route } from 'react-router-dom';
+import { supabase } from './supabase/client';
+import { Home, Dashboard, NotFound } from './pages';
 import { NewOrder,ColorProyect } from "./components";
+import "./index.css";
+
 
 export default function App() {
   const [session, setSession] = useState(null);
@@ -20,17 +20,17 @@ export default function App() {
   }, []);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid">      
       <Routes>
         <Route
           path="/"
           element={
             !session ? (
               <Home />
-            ) : (
-              <Dashboard key={session.user.id} session={session} />
-            )
-          }
+              ) : (
+                <Dashboard key={session.user.id} session={session} />
+                )
+              }
         >
           <Route path="new_order" element={<NewOrder />} />
           <Route path="colorproyect" element={<ColorProyect />} />

@@ -1,0 +1,41 @@
+#bg{
+    position:absolute;
+    background-image:
+        url("https://fvvtqpkgirpnlmiemgcn.supabase.co/storage/v1/object/sign/logo/bg-auth.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJsb2dvL2JnLWF1dGguanBnIiwidHJhbnNmb3JtYXRpb25zIjoiIiwiaWF0IjoxNjczODcyMTQzLCJleHAiOjE5ODkyMzIxNDN9.8h4yLHY1QsKURnBKQelUdm8gA-JqbFLGzi6mZRM3ur8");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        overflow: hidden;
+        height: 100vh;
+        filter: blur(4px);
+        z-index:-1;
+}
+.form-widget{
+    position:absolute;
+    background: rgba(39,62,84,0.55);
+    overflow: hidden;
+    height: 100%;
+    z-index: 2;
+}
+.header{
+    margin-top: 45vh;    
+}
+#titleLogin{
+    padding:2rem;
+    font-size: var(--xl-font-size);
+}
+.inputField {
+    margin-left: .5rem;
+    background: var(--text-color);
+    border:none;
+    border-radius: 5px;
+    padding: 0.25rem 1rem;
+    font-size: var(--lg-font-size);
+}
+
+
+#submitLogin{
+    margin-top:-0.30rem;
+    margin-left:.5rem;
+}

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Navbar, SideBar } from '../../components';
 import { supabase } from '../../supabase/client';
+import './dashboard.css';
 
 function Dashboard({ session }) {
 
@@ -44,10 +45,10 @@ function Dashboard({ session }) {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-sm-1 col-md-1 col-lg-1 col-xl-2 col-xxl-2 my-2 mx-auto px-0">
+        <div className="col-sm-1 col-md-1 col-lg-2 col-xl-2 col-xxl-2 my-2 mx-auto px-0 d-none d-lg-block">
           <SideBar username={username} url={avatar_url}/>
         </div>
-        <div className="col-sm-1 col-md-1 col-lg-1 col-xl-10 col-xxl-10 my-2 mx-auto px-0">
+        <div className="col-sm-12 col-md-12 col-lg-10 col-xl-10 col-xxl-10 my-2 mx-auto px-0">
           <Navbar/>
           <Outlet/>
         </div>

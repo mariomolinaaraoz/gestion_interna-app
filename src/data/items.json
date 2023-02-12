@@ -1,0 +1,29 @@
+[
+    {
+        "id":1,
+        "name":"Chapa Galv. Lisa 12",
+        "thickness":2.50,
+        "weight":19.74,
+        "size_1":"1x2",
+        "size_2":"4x8",
+        "size_3":""
+    },
+    {
+      "id": 2,
+      "name": "Computer",
+      "price": 1199,
+      "imgUrl": "./imgs/budin-sin-fruta.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Banana",
+      "price": 1.05,
+      "imgUrl": "./imgs/pan.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Car",
+      "price": 14000,
+      "imgUrl": "./imgs/sorrentino-1.jpg"
+    }
+  ]

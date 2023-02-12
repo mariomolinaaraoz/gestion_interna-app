@@ -1,4 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.dark {
+  /*===== Colores =====*/
+  --first-color: rgb(111, 111, 111);
+  --second-color: rgb(254, 254, 254);
+  --emphasis-color: rgb(25, 77, 183);
+  --text-color: black;
+  --link-color:yellow;
+  
+}
+
 :root {
   /*===== Colores =====*/
   --first-color: rgb(27,37, 54);

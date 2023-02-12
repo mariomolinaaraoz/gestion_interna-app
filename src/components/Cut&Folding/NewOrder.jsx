@@ -1,6 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react';
+import sheet_metal_data from '../../data/items.json';
 
 export default function NewOrder() {
+
+  let [sheet_metal_id, setSheet_metal_id]=useState();
+  let [sheet_metal_weight, setSheet_metal_weight]=useState();
+
+  const handleSheetMetal=(e)=>{
+    
+    let getStatedata= sheet_metal_data.find(country=>country.country_id===getcountryId).states;
+
+  //   const getcountryId= e.target.value;
+  //   const getStatedata= countrydata.find(country=>country.country_id===getcountryId).states;
+  //   setState(getStatedata);
+  //   setCountryid(getcountryId);
+  // //console.log(getcountryId);
+
+  }
+
+
   return (
     <div className="card bg-first-color m-3 p-1">
       <div className="card-body">
@@ -95,7 +113,7 @@ export default function NewOrder() {
                   <div className="form-floating mb-2">
                     <input
                       type="address"
-                      id="email"
+                      id="address"
                       autoComplete="off"
                       className="form-control md-fs bg-second-color border-0 text-color"
                       name="address"
@@ -144,7 +162,7 @@ export default function NewOrder() {
           <fieldset className='border border-success rounded-3 mb-3 p-3'>
             <h2 className="md-fs">Detalle de plegados:</h2>
             <div className="row">
-              <div id="group_description" className="col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8 mx-auto">
+              <div id="group_description" className="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mx-auto">
                   <div className="form-floating mb-2 p-0">
                     <input
                       type="text"
@@ -161,23 +179,7 @@ export default function NewOrder() {
                     </label>
                   </div>
               </div>
-              <div id="group_quantity" className="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
-                  <div className="form-floating mb-2">
-                    <input
-                      type="number" min="0" max="100"
-                      id="quantity"
-                      autoComplete="off"
-                      className="form-control md-fs bg-second-color border-0 text-color"
-                      name="quantity"
-                      placeholder="Cantidad de piezas"
-                      title="Ingrese cantidad de piezas"
-                    />
-                    <label htmlFor="quantity" className="sm-fs">
-                      Cantidad:
-                    </label>
-                  </div>
-              </div>
-              <div id="group_development" className="col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
+              <div id="group_development" className="col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mx-auto">
                   <div className="form-floating mb-2">
                     <input
                       type="number" min="0"
@@ -192,8 +194,8 @@ export default function NewOrder() {
                       Desarrollo:
                     </label>
                   </div>
-              </div>
-              <div id="group_length" className="col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
+              </div>              
+              <div id="group_length" className="col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mx-auto">
                   <div className="form-floating mb-2">
                     <input
                       type="number" min="0"
@@ -209,65 +211,205 @@ export default function NewOrder() {
                     </label>
                   </div>
               </div>
-              <div id="group_length" className="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
-                <button className="btn btn-primary btn-lg w-100 mb-2" style={{marginTop:".32rem"}}>Agregar</button>
+              <div id="group_sheet_metal" className="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mx-auto">
+                  <div className="form-floating mb-2">
+                    <select
+                      id="sheet_metal"
+                      className="form-control md-fs bg-second-color border-0 text-color"
+                      name="sheet_metal"
+                      required
+                      title="Chapa"
+                      onChange={(e)=>handleSheetMetal(e)}
+                    >          
+                    {
+                      sheet_metal_data.map((data, index) => (
+                        <option
+                          defaultValue={data.id} 
+                          key={index}
+                        >
+                          {data.name}
+                        </option>
+                      ))                      
+
+                    }
+                    {/* <option value="1">Chapa Estamp. 12</option>
+                    <option value="1">Chapa Estamp. 14</option>
+                    <option value="1">Chapa Estamp. 16</option>
+                    <option value="1">Chapa Estamp. 18</option>
+                    <option value="1">Chapa Estamp. 20</option>
+                    <option value="1">Chapa Antides. 1/8"</option>
+                    <option value="1">Chapa Antides. 3/16"</option>
+                    <option value="1">Chapa Antides. 1/4"</option> */}
+                    </select>
+                    <label htmlFor="length" className="sm-fs">
+                      Chapa:
+                    </label>
+                  </div>
               </div>
-              <div id="group_length" className="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mx-auto">
-                <table className="mt-2 lg-fs table table-success table-striped-columns">
-                  <tr className="bg-light">
-                      <th>#</th>
-                      <th>Descripción</th>
-                      <th>Cantidad</th>
-                      <th>Desarrollo</th>
-                      <th>Largo</th>
-                      <th>Chapa</th>                    
-                  </tr>
-                  <tr>
-                      <td>1</td>
-                      <td>Plegado en U</td>
-                      <td>12</td>
-                      <td>610</td>
-                      <td>3000</td>
-                      <td>Chapa 14</td>
-                    </tr>
+              <div id="group_quantity" className="col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3 mx-auto">
+                  <div className="form-floating mb-2">
+                    <input
+                      type="number" min="0" max="100"
+                      id="quantity"
+                      autoComplete="off"
+                      className="form-control md-fs bg-second-color border-0 text-color"
+                      name="quantity"
+                      placeholder="Cantidad de piezas"
+                      title="Ingrese cantidad de piezas"
+                    />
+                    <label htmlFor="quantity" className="sm-fs">
+                      Cantidad:
+                    </label>
+                  </div>
+              </div>
+              <div id="group_addButton" className="col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3 mx-auto">
+                <button className="btn btn-primary btn-md sm-fs w-100 my-3" type="button" style={{marginTop:".32rem"}}>Agregar</button>
+              </div>
+              <div id="group_table" className="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mx-auto">
+                <table className="table table-dark table-striped">
+                  <thead>
                     <tr>
-                      <td>2</td>
-                      <td>Plegado en L</td>
-                      <td>12</td>
-                      <td>610</td>
-                      <td>3000</td>
-                      <td>Chapa 14</td>
+                        <th>#</th>
+                        <th>Descripción</th>
+                        <th>Desarrollo (mm)</th>
+                        <th>Largo (mm)</th>
+                        <th>Chapa</th>
+                        <th>Peso (kgs)</th>
+                        <th>Cantidad (unid.)</th>
                     </tr>
+                  </thead>
+                  <tbody>
                     <tr>
-                      <td>3</td>
-                      <td>Canaleta</td>
-                      <td>12</td>
-                      <td>610</td>
-                      <td>3000</td>
-                      <td>Chapa 14</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Babeta</td>
-                      <td>12</td>
-                      <td>610</td>
-                      <td>3000</td>
-                      <td>Chapa 24 Galvanizada</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Travesaño</td>
-                      <td>12</td>
-                      <td>200</td>
-                      <td>1000</td>
-                      <td>Chapa 16</td>
-                    </tr>
+                        <td>1</td>
+                        <td>Plegado en U</td>
+                        <td>610</td>
+                        <td>3000</td>
+                        <td>Chapa 14</td>
+                        <td>12,4</td>
+                        <td>12</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Plegado en L</td>
+                        <td>610</td>
+                        <td>3000</td>
+                        <td>Chapa 14</td>
+                        <td>3,6</td>
+                        <td>12</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Canaleta</td>
+                        <td>610</td>
+                        <td>3000</td>
+                        <td>Chapa 14</td>
+                        <td>33</td>
+                        <td>12</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Babeta</td>
+                        <td>610</td>
+                        <td>3000</td>
+                        <td>Chapa 24 Galvanizada</td>
+                        <td>14,3</td>
+                        <td>12</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Travesaño</td>
+                        <td>200</td>
+                        <td>1000</td>
+                        <td>Chapa 16</td>
+                        <td>24,2</td>
+                        <td>12</td>
+                      </tr>
+                    </tbody>
                 </table>
               </div>
             </div>
-            
-
-          </fieldset >
+          </fieldset>
+          <fieldset className='border border-success rounded-3 mb-3 p-3'>
+            <h2 className="md-fs">Precio y forma de pago:</h2>
+            <div className="row">
+              <div id="group_total_amount" className="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
+                  <div className="form-floating mb-2 p-0">
+                    <input
+                      type="text"
+                      id="total_amount"
+                      autoComplete="off"
+                      className="form-control lg-fs bg-second-color border-0 text-color text-end"
+                      name="total_amount"
+                      placeholder="Total del pedido"
+                      title="Total del pedido"
+                      defaultValue="$ 10.500,00"
+                    />
+                    <label htmlFor="total_amount" className="md-fs">
+                      Total:
+                    </label>
+                  </div>
+              </div>
+              <div id="group_advance_payment" className="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
+                  <div className="form-floating mb-2 p-0">
+                    <input
+                      type="text"
+                      id="advance_payment"
+                      autoComplete="off"
+                      className="form-control lg-fs bg-second-color border-0 text-color text-end"
+                      name="advance_payment"
+                      placeholder="Total del pedido"
+                      title="Total del pedido"
+                      defaultValue="$ 5.000,00"
+                    />
+                    <label htmlFor="advance_payment" className="md-fs">
+                      Anticipo:
+                    </label>
+                  </div>
+              </div>
+              <div id="group_balance" className="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
+                  <div className="form-floating mb-2 p-0">
+                    <input
+                      type="text"
+                      id="balance"
+                      autoComplete="off"
+                      className="form-control lg-fs bg-second-color border-0 text-color text-end"
+                      name="balance"
+                      placeholder="Total del pedido"
+                      title="Total del pedido"
+                      defaultValue="$ 5.500,00"
+                    />
+                    <label htmlFor="balance" className="md-fs">
+                      Saldo:
+                    </label>
+                  </div>
+              </div>
+            </div>
+            <div id="group_balance" className="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mx-auto">
+              <h2 className="md-fs">Pagos:</h2>
+              <div className="row">
+              </div>
+            </div>
+            <div id="group_table" className="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mx-auto">
+                <table className="table table-dark table-striped">
+                  <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Concepto</th>
+                        <th>Monto ($)</th>
+                        <th>Fecha</th>                        
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Anticipo</td>
+                        <td>5.000,00</td>
+                        <td>24/01/22</td>                        
+                      </tr>                      
+                    </tbody>
+                </table>
+              </div>
+          </fieldset>
         </form>
       </div>
     </div>
