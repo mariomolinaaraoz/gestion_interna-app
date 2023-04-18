@@ -49,6 +49,25 @@ export default function SideBar({username, url}) {
           <span className="text-emphasis-color sm-fs"><strong>Admin</strong></span>
       </div>
       <div id="menu" className="mt-3 min-vh-100">
+      <span className="sm-fs ms-4 text-start text-muted">Obras</span>
+        <div className="d-flex flex-column align-items-center align-items-sm-center px-1 pt-2">
+          <ul
+            className="nav nav-pills navbar-dark flex-column mb-sm-auto mb-0 align-items-sm-start"
+          >
+            <li>
+                <Link className="nav-link text-color text-decoration-none align-middle p-1" to='new_structure'>
+                  <i className="lg-fs bi bi-pencil-square"></i>
+                  <span className="sm-fs ms-2 d-none d-lg-inline">Nueva</span>
+                </Link>
+            </li>
+            <li className="">
+                <a href="#" className="nav-link text-color text-decoration-none align-items-middle p-1" title="Pedido pendientes">
+                  <i className="lg-fs bi bi-list-task"></i>
+                  <span className="sm-fs ms-2 d-none d-lg-inline">Ver Obras</span>
+                </a>
+            </li>
+          </ul>
+        </div>
         <span className="sm-fs ms-4 text-start text-muted">Corte y Plegado</span>
         <div className="d-flex flex-column align-items-center align-items-sm-center px-1 pt-2">
           <ul

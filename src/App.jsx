@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { supabase } from './supabase/client';
 import { Home, Dashboard, NotFound } from './pages';
-import { NewOrder,ColorProyect } from "./components";
+import { NewStructure, NewOrder,ColorProyect } from "./components";
 import "./index.css";
 
 
@@ -32,6 +32,7 @@ export default function App() {
                 )
               }
         >
+          <Route path="new_structure" element={<NewStructure />} />
           <Route path="new_order" element={<NewOrder />} />
           <Route path="colorproyect" element={<ColorProyect />} />
         </Route>
