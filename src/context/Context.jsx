@@ -11,9 +11,37 @@ export const useInternalManagemente = () => {
 };
 
 export const InternalManagementContextProvider = ({ children }) => {
-  const [recipe, setRecipe] = useState([]);
+  
+  const [structure, setStructure] = useState([]);
   const [adding, setAdding] = useState(false);
   const [loading, setLoading] = useState(false);
+  
+  
+  
+  
+  
+  
+  const createStructure = async (new_structure) => {
+    setAdding(true);
+    try {
+      const user = supabase.auth.user();
+      const { error, data } = await supabase.from("structure").insert({
+        userId: user.id,
+        name_structure:new_structure.name_structure
+      });
+      if (error) throw error;
+      setRecipe([...structure, ...data]);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setAdding(false);
+    }
+  };
+  
+  
+  
+  const [recipe, setRecipe] = useState([]);
+  
 
   const getRecipe = async (state = true) => {
     setLoading(true);
@@ -38,34 +66,7 @@ export const InternalManagementContextProvider = ({ children }) => {
       const { error, data } = await supabase.from("recipe").insert({
         userId: user.id,
         folder:newrecipe.folder,
-        title: newrecipe.title,
-        subtitle: newrecipe.subtitle,
-        state: newrecipe.state,
-        ranking: newrecipe.ranking,
-        category_1: newrecipe.category_1,
-        category_2: newrecipe.category_2,
-        category_3: newrecipe.category_3,
 
-        portions: newrecipe.portions,
-        preparation:newrecipe.preparation,
-        ingredients_Qty:newrecipe.ingredients_Qty,
-        cooking:newrecipe.cooking,
-        freezer:newrecipe.freezer,
-        cost:newrecipe.cost,
-
-        materials:newrecipe.materials,
-
-        title_1:newrecipe.title_1,
-        ingredients_1:newrecipe.ingredients_1,
-        recipe_1:newrecipe.recipe_1,
-        title_2:newrecipe.title_2,
-        ingredients_2:newrecipe.ingredients_2,
-        recipe_2:newrecipe.recipe_2,
-        title_3:newrecipe.title_3,
-        ingredients_3:newrecipe.ingredients_3,
-        recipe_3:newrecipe.recipe_3,
-
-        imgUrl: newrecipe.imgUrl,
       });
       if (error) throw error;
       setRecipe([...recipe, ...data]);
