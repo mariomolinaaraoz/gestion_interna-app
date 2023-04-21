@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { supabase } from './supabase/client';
 import { Home, Dashboard, NotFound } from './pages';
-import { NewStructure, NewOrder,ColorProyect } from "./components";
+import { NewStructure, ListStructure, NewOrder,ColorProyect } from "./components";
 import "./index.css";
-
 
 export default function App() {
   const [session, setSession] = useState(null);
@@ -33,6 +32,7 @@ export default function App() {
               }
               >
           <Route path="new_structure" element={<NewStructure session={session}/>} />
+          <Route path="list_structure" element={<ListStructure session={session}/>} />
           <Route path="new_order" element={<NewOrder />} />
           <Route path="colorproyect" element={<ColorProyect />} />
         </Route>

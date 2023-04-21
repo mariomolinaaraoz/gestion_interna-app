@@ -18,16 +18,16 @@ export const InternalManagementContextProvider = ({ children }) => {
 
   const getStructure = async (state = true) => {
     setLoading(true);
-    const user = supabase.auth.user();
+    // const user = supabase.auth.user();
     const { error, data } = await supabase
       .from("structure")
       .select()
-      .eq("state", state)
+      // .eq("state", state)
       .order("id", { ascending: false });
 
     if (error) throw error;
 
-    setRecipe(data);
+    setStructure(data);
     setLoading(false);    
   };
     

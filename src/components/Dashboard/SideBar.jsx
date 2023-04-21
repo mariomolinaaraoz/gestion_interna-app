@@ -61,10 +61,10 @@ export default function SideBar({username, url}) {
                 </Link>
             </li>
             <li className="">
-                <a href="#" className="nav-link text-color text-decoration-none align-items-middle p-1" title="Pedido pendientes">
+              <Link className="nav-link text-color text-decoration-none align-middle p-1" to='list_structure'>
                   <i className="lg-fs bi bi-list-task"></i>
                   <span className="sm-fs ms-2 d-none d-lg-inline">Ver Obras</span>
-                </a>
+              </Link>
             </li>
           </ul>
         </div>

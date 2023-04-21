@@ -23,7 +23,7 @@ export default function NewStructure({session}) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     createStructure(newStructure);
-    // navigate("/dashboard/list_recipe");
+    navigate("/list_structure");
     // window.location.href = "/dashboard/list_recipe";
   };
 
@@ -194,7 +194,7 @@ export default function NewStructure({session}) {
             </div>
           </fieldset>
           <fieldset className="border border-success rounded-3 mb-3 p-3">
-            <h2 className="md-fs">Detalle de plegados:</h2>
+            <h2 className="md-fs">Detalle de la obra:</h2>
             <div className="row">
               <div
                 id="group_description"
@@ -212,7 +212,7 @@ export default function NewStructure({session}) {
                     required
                   />
                   <label htmlFor="description" className="sm-fs">
-                    Descripción de la obra:
+                    Descripción:
                   </label>
                 </div>
               </div>

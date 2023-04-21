@@ -1,16 +1,15 @@
-import { useEffect, useState } from "react";
-import { useRecipe } from "../../context/Context";
+import { useEffect } from "react";
+import { useInternalManagement } from "../../context/Context";
 
-function ListRecipe() {
-  const [newValueTitle, setNewValueTitle] = useState("");
-  // mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
-  const { recipe, getRecipe, loading, updateRecipe, deleteRecipe } =
-    useRecipe();
+export default function ListStructure() {
+
+  const { structure, getStructure, loading } =
+    useInternalManagement();
 
   useEffect(() => {
-    getRecipe();
+    getStructure();
   }, []);
-  // mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+
   return (
     <div className="container">
       <div className="card">
@@ -18,9 +17,9 @@ function ListRecipe() {
           <span className="azt34 lg-fs fw-bold" id="ph">
             {loading
               ? "Loading"
-              : recipe.length === 0
-              ? "No se encontraron recetas"
-              : "Listado de Recetas"}
+              : structure.length === 0
+              ? "No se encontraron Obras"
+              : "Listado de Obras"}
           </span>
         </div>
 
@@ -41,13 +40,13 @@ function ListRecipe() {
             </thead>
 
             <tbody id="table_body" className="table-group-divider">
-              {recipe.map((recipe, index) => {
+              {structure.map((structure, index) => {
                 return (
-                  <tr key={recipe.id}>
+                  <tr key={structure.id}>
                     <td>{index + 1}</td>
-                    <td>{recipe.title}</td>
-                    <td>{recipe.subtitle}</td>
-                    <td className="azt">{recipe.ranking}</td>
+                    <td>{structure.name_structure}</td>
+                    <td>---</td>
+                    <td className="azt">---</td>
                     <td className="text-center"></td>
                   </tr>
                 );
