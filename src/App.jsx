@@ -31,13 +31,13 @@ export default function App() {
                 <Dashboard key={session.user.id} session={session} />
                 )
               }
-        >
-          <Route path="new_structure" element={<NewStructure />} />
+              >
+          <Route path="new_structure" element={<NewStructure session={session}/>} />
           <Route path="new_order" element={<NewOrder />} />
           <Route path="colorproyect" element={<ColorProyect />} />
         </Route>
         <Route path="/*" element={<NotFound />} />
-      </Routes>
+        </Routes>
     </div>
   );
 }
