@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { supabase } from './supabase/client';
 import { Home, Dashboard, NotFound } from './pages';
-import { NewStructure, ListStructure, NewOrder,ColorProyect } from "./components";
+import { ListPerfilC, NewStructure, ListStructure, NewOrder,ColorProyect } from "./components";
 import "./index.css";
 
 export default function App() {
@@ -31,6 +31,7 @@ export default function App() {
                 )
               }
               >
+          <Route path="list_perfilc" element={<ListPerfilC session={session}/>} />
           <Route path="new_structure" element={<NewStructure session={session}/>} />
           <Route path="list_structure" element={<ListStructure session={session}/>} />
           <Route path="new_order" element={<NewOrder />} />

@@ -12,13 +12,42 @@ export const useInternalManagement = () => {
 
 export const InternalManagementContextProvider = ({ children }) => {
   
+  const [chapaLC, setChapaLC] = useState([]);
+  const [perfilC, setPerfilC] = useState([]);
   const [structure, setStructure] = useState([]);
   const [adding, setAdding] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const getChapaLC = async () => {
+    setLoading(true);
+    const { error, data } = await supabase
+      .from("chapaLC")
+      .select()
+      // .eq('espesor',filtro)
+      .order('id', { ascending: true });
+
+    if (error) throw error;
+
+    setChapaLC(data);
+    setLoading(false);    
+  };
+
+  const getPerfilC = async (state = true) => {
+    setLoading(true);
+    const { error, data } = await supabase
+      .from("perfilC")
+      .select()
+      // .eq("state", state)
+      .order('id', { ascending: true });
+
+    if (error) throw error;
+
+    setPerfilC(data);
+    setLoading(false);    
+  };
+
   const getStructure = async (state = true) => {
     setLoading(true);
-    // const user = supabase.auth.user();
     const { error, data } = await supabase
       .from("structure")
       .select()
@@ -50,6 +79,10 @@ export const InternalManagementContextProvider = ({ children }) => {
   return (
     <InternalManagementContext.Provider
       value={{
+        chapaLC,
+        getChapaLC,
+        perfilC,
+        getPerfilC,
         structure,
         getStructure,
         createStructure,

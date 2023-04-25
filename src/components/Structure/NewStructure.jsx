@@ -197,7 +197,7 @@ export default function NewStructure({session}) {
             <h2 className="md-fs">Detalle de la obra:</h2>
             <div className="row">
               <div
-                id="group_description"
+                id="group_name_structure"
                 className="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mx-auto"
               >
                 <div className="form-floating mb-2 p-0">
@@ -212,6 +212,26 @@ export default function NewStructure({session}) {
                     required
                   />
                   <label htmlFor="description" className="sm-fs">
+                    Nombre:
+                  </label>
+                </div>
+              </div>
+              <div
+                id="group_description_structure"
+                className="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mx-auto"
+              >
+                <div className="form-floating mb-2 p-0">
+                  <input
+                    type="text"
+                    id="description"
+                    autoComplete="off"
+                    className="form-control md-fs bg-second-color border-0 text-color"
+                    name="description"
+                    placeholder="Descripción del plegado"
+                    title="Descripción del plegado"
+                    required
+                  />
+                  <label htmlFor="description" className="sm-fs text-wrap">
                     Descripción:
                   </label>
                 </div>

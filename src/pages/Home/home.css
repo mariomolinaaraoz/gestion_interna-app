@@ -1,41 +1,83 @@
-#bg{
-    position:absolute;
-    background-image:
-        url("https://fvvtqpkgirpnlmiemgcn.supabase.co/storage/v1/object/sign/logo/bg-auth.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJsb2dvL2JnLWF1dGguanBnIiwidHJhbnNmb3JtYXRpb25zIjoiIiwiaWF0IjoxNjczODcyMTQzLCJleHAiOjE5ODkyMzIxNDN9.8h4yLHY1QsKURnBKQelUdm8gA-JqbFLGzi6mZRM3ur8");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        overflow: hidden;
-        height: 100vh;
-        filter: blur(4px);
-        z-index:-1;
-}
-.form-widget{
-    position:absolute;
-    background: rgba(39,62,84,0.55);
-    overflow: hidden;
-    height: 100%;
-    z-index: 2;
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background-image: 
+    linear-gradient(0deg, rgba(0,0,0,.3), rgba(20,20,20,.3)),
+    url("https://images.pexels.com/photos/2929244/pexels-photo-2929244.jpeg");
+    }
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255,0.5);
+    border-radius: 10px;
+    -webkit-backdrop-filter: blur(15px);  
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .header{
-    margin-top: 45vh;    
+    font-size: 2em;
+    color: var(--text-color);
+    text-align: center;   
 }
-#titleLogin{
-    padding:2rem;
-    font-size: var(--xl-font-size);
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid var(--text-color);
 }
-.inputField {
-    margin-left: .5rem;
-    background: var(--text-color);
+.inputbox label {
+    position: absolute;
+    top: -3px;
+    left: 5px;
+    transform: translateY(-50%);
+    color:var(--text-color);
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background:transparent;
     border:none;
-    border-radius: 5px;
-    padding: 0.25rem 1rem;
-    font-size: var(--lg-font-size);
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color:var(--text-color);
 }
-
-
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+   -webkit-transition-delay: 9999s;
+   transition-delay: 9999s;
+}
+.inputbox i{
+    position:absolute;
+    right: 8px;
+    color:var(--text-color);
+    font-size: 20px;
+}
 #submitLogin{
-    margin-top:-0.30rem;
-    margin-left:.5rem;
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: var(--text-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
 }

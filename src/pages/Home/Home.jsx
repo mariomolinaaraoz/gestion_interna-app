@@ -24,46 +24,49 @@ function Home() {
   };
 
   return (
-    <div className="row">
-      <div id="bg"></div>
-      <div className="col-12 text-center form-widget" aria-live="polite">
-        <div id="empresa"
-        className="header d-flex justify-content-center align-items-center mb-3 py-2">
-          <span className="my-auto xl-fs"><i className="bi bi-building"></i></span>
-          <span className="my-auto xl-fs ms-2 d-none d-lg-inline">EMPRESA</span>
+    <section>
+      <div className="form-box">
+        <div className="form-value">
+          <form onSubmit={handleLogin}>
+            <div id="empresa" className="header">
+              <i className="bi bi-building"></i>
+              <h2 className="">EMPRESA</h2>
+            </div>
+            <div className="inputbox">
+              <i class="bi bi-envelope"></i>
+              <input
+                id="emailLogin"
+                className="inputField"
+                type="email"
+                placeholder=""
+                autoComplete="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <label htmlFor="emailLogin">Email</label>
+            </div>
+            <div className="inputbox">
+              <i class="bi bi-lock"></i>
+              <input
+                id="passwordLogin"
+                className="inputField"
+                type="password"
+                placeholder=""
+                autoComplete=""
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <label htmlFor="passwordLogin">Password</label>
+            </div>
+            <button type="submit" id="submitLogin" className="">
+              {loading ? <span>Ingresando...</span> : <span>Ingresar</span>}
+            </button>
+          </form>
+        </div>
       </div>
-
-        <form onSubmit={handleLogin}>
-          <input
-            id="emailLogin"
-            className="inputField"
-            type="email"
-            placeholder="ingrese email..."
-            autoComplete="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            id="passwordLogin"
-            className="inputField"
-            type="password"
-            placeholder=""
-            autoComplete="current-password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button 
-            type="submit" 
-            id="submitLogin" 
-            className="btn btn-primary" 
-          >
-            {loading ? <span>Ingresando...</span> : <span>Ingresar</span>}
-          </button>
-        </form>
-      </div>
-    </div>
+    </section>
   );
 }
 export default Home;
