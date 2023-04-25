@@ -37,13 +37,13 @@ section {
 }
 .inputbox {
     position: relative;
-    margin: 2rem 0 1.5rem;
+    margin: 2rem 0 1rem;
     width: 18rem;
     border-bottom: 2px solid var(--text-color);
 }
 .inputbox label {
     position: absolute;
-    top: -3px;
+    top: -2px;
     left: 5px;
     transform: translateY(-50%);
     color:var(--text-color);
@@ -70,6 +70,7 @@ input:-webkit-autofill:active {
 }
 .inputbox i{
     position:absolute;
+    top:0.75rem;
     right: 8px;
     color:var(--text-color);
     font-size: 20px;
