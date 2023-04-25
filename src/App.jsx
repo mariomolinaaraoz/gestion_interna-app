@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { supabase } from './supabase/client';
 import { Home, Dashboard, NotFound } from './pages';
-import { ListPerfilC, NewStructure, ListStructure, NewOrder,ColorProyect } from "./components";
+import { ListPerfilC, NewStructure, ListStructure, NewOrder,ColorProyect, Footer } from "./components";
 import "./index.css";
 
 export default function App() {
@@ -39,6 +39,7 @@ export default function App() {
         </Route>
         <Route path="/*" element={<NotFound />} />
         </Routes>
+        <Footer/>
     </div>
   );
 }

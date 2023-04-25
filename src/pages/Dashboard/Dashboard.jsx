@@ -43,7 +43,7 @@ function Dashboard({ session }) {
   }
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid dashboard">
       <div className="row">
         <div className="col-sm-1 col-md-1 col-lg-2 col-xl-2 col-xxl-2 my-2 mx-auto px-0 d-none d-lg-block">
           <SideBar username={username} url={avatar_url}/>

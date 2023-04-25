@@ -1,0 +1,55 @@
+/* *********************/
+/* seccion F O O T E R */
+/* *********************/
+footer {
+  height: 7vh;
+  background-color: var(--second-color);
+}
+footer article#copyright {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: .5rem 0 0;
+}
+footer article#copyright a {
+  color: var(--text-color);
+}
+footer article#copyright h1 {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+footer article#copyright p {
+  color: var(--text-color);
+  margin: 0.3rem 0;
+  font-size: rem;
+}
+footer hr {
+    color: var(--emphasis-color);
+  margin: 0 auto;
+  width: 50%;
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (max-width: 768px) {
+    footer{
+        height: 5vh;
+    }
+  footer article#copyright {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0rem 2rem 0;
+  }
+  footer article#copyright h1 {
+    width: 7.5rem;
+    text-align: left;
+  }
+  footer article#copyright p {
+    text-align: right;
+    font-size: 0.7rem;
+  }
+  footer hr {
+    visibility: hidden;
+  }
+}

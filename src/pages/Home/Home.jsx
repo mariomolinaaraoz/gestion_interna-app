@@ -33,7 +33,7 @@ function Home() {
               <h2 className="">EMPRESA</h2>
             </div>
             <div className="inputbox">
-              <i class="bi bi-envelope"></i>
+              <i className="bi bi-envelope"></i>
               <input
                 id="emailLogin"
                 className="inputField"
@@ -47,7 +47,7 @@ function Home() {
               <label htmlFor="emailLogin">Email</label>
             </div>
             <div className="inputbox">
-              <i class="bi bi-lock"></i>
+              <i className="bi bi-lock"></i>
               <input
                 id="passwordLogin"
                 className="inputField"
