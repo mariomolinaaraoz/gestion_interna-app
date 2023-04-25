@@ -167,4 +167,7 @@ footer #design a{
     margin: 0;
     padding: 0;
   }
+  footer article#design h1{
+    visibility: hidden;
+  }
 }
