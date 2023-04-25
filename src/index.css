@@ -40,7 +40,7 @@ html {
 }
 body {  
   min-height: 100vh;
-  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
   background-color: var(--second-color);
   font-family: var(--body-font);
   font-size: var(--sm-font-size) !important;
