@@ -6,17 +6,16 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 88vh;
     width: 100%;    
+    background-image: 
+    linear-gradient(0deg, rgba(0,0,0,.3), rgba(20,20,20,.3)),
+    url("https://fvvtqpkgirpnlmiemgcn.supabase.co/storage/v1/object/sign/logo/bg-auth.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJsb2dvL2JnLWF1dGguanBnIiwiaWF0IjoxNjgyNDM2MDgxLCJleHAiOjE3MTM5NzIwODF9.PcNB1vT8bmkeNe-QCk40VKMFkRfXAbk8kVvJ2uEbBEs&t=2023-04-25T15%3A21%3A21.749Z");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
-    background-image: 
-    linear-gradient(0deg, rgba(0,0,0,.3), rgba(20,20,20,.3)),
-    url("https://images.pexels.com/photos/2929244/pexels-photo-2929244.jpeg");
-    }
+}
 .form-box{
     position: relative;
     width: 25rem;
@@ -86,9 +85,11 @@ input:-webkit-autofill:active {
     font-size: 1em;
     font-weight: 600;
 }
-
 /* Medium devices (tablets, 768px and up)*/
 @media (max-width: 768px) {
+    section{
+        height: 91vh;
+    }
     .form-box{
         width: 75vw;
         height: 45vh;        

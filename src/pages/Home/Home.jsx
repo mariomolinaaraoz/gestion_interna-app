@@ -65,7 +65,7 @@ function Home() {
             </button>
           </form>
         </div>
-      </div>
+      </div>      
     </section>
   );
 }
