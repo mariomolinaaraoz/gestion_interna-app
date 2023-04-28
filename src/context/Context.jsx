@@ -46,6 +46,17 @@ export const InternalManagementContextProvider = ({ children }) => {
     setLoading(false);    
   };
 
+  const getFileUrl = async (fileName) => {
+    const { publicURL, error } = await supabase.storage.from('file').getPublicUrl(fileName);
+  
+    if (error) {
+      console.log('Error al obtener el URL del archivo:', error);
+    } else {
+      console.log('URL del archivo:', publicURL);
+    }
+  };
+  
+
   const getStructure = async (state = true) => {
     setLoading(true);
     const { error, data } = await supabase
